@@ -25,6 +25,9 @@
     <content type="html"><![CDATA[{{ post.content | safe }}]]></content>
     {% endif %}
     <summary type="html">
+    {% if post.thumbnails %}
+      <img src="{{ post.thumbnails[0] }}" title="{{ post.title }}">
+    {% endif %}
     {% if post.description %}
       {{ post.description }}
     {% elif post.excerpt %}
